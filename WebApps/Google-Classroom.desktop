@@ -1,0 +1,15 @@
+[Desktop Entry]
+
+Version = 1.0
+
+Type = Application
+
+Terminal = false
+
+Name = Google Classroom
+
+Exec = /opt/WebApps/Google-Classroom-linux-x64/Google-Classroom
+
+Icon = /opt/WebApps/Google-Classroom-linux-x64/resources/app/icon.png
+
+Categories = Application

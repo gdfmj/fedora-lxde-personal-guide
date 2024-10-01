@@ -1,0 +1,15 @@
+[Desktop Entry]
+
+Version = 1.0
+
+Type = Application
+
+Terminal = false
+
+Name = Google Drive
+
+Exec = /opt/WebApps/Google-Drive-linux-x64/Google-Drive
+
+Icon = /opt/WebApps/Google-Drive-linux-x64/resources/app/icon.png
+
+Categories = Application
