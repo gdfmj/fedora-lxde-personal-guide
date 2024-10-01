@@ -1,0 +1,198 @@
+O QUE FAZER APÓS INSTALAR FEDORA-LXDE
+
+====================================Softwares====================================
+	Rodar no terminal:
+
+$ sudo dnf update -y --allowerasing --best; sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit; sudo dnf install -y --allowerasing --best https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm fedora-workstation-repositories; sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
+
+Isso vai atualizar o seu sistema operacional, desinstalar alguns aplicativos desnecessários, instalar os repositórios RPM Fusion, os de terceiros e os programas: 'Ffmpeg'; 'Git'; 'GTK4'; 'Compton'; 'Captura de Tela'; 'VLC'; 'Sylpheed'; 'Chromium'; 'Cheese'; 'OneDrive Free Client'; 'Evince - Visualizador de Documentos'; 'Libre Office'; 'Libre Office Draw'; 'GImageReader'; 'GIMP'; 'Brightness Control'; 'KolourPaint'; 'Qlipper'; 'JGMenu' e 'Window Manager Control'
+
+====================================Configurar o One Drive====================================
+	Rode no terminal:
+
+$ onedrive --synchronize
+
+
+====================================Instalar e configurar os Temas do LXDE====================================
+Ícones: 
+- Papirus 
+link: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
+Widgets:
+- Adwaita-dark (GTK-2 vem por padrão, mas falta o GTK-3)
+	remover os arquivos originais:
+
+$ sudo rm -r /usr/share/themes/Adwaita-dark
+
+	copiar a base no OneDrive:
+
+$ sudo cp -r ~/OneDrive/Computação/Adwaita-dark /usr/share/themes/
+
+- Adwaita-Maia-dark (GTK-3 & GTK-2)
+link: https://github.com/kouros17/Adwaita-Maia-Dark
+
+Openbox(Borda da Janela): 
+- Tenebris
+link: https://github.com/shaggyz/openbox-tenebris
+
+Relógio digital: Formato do relógio (%a %d de %b %R); Formato da dica (%A, %d de %B de %Y - %X)
+
+Monitor de Baterias: Cor de fundo (#4e4e4e) ; Cor de carregamento (#00bfff) ; Cor de descarregamento (#dfdfdf)
+
+Botão de logout:
+	copiar o ícone personalizado para a pasta comum:
+
+$ sudo cp ./OneDrive/Computação/Ícones/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/
+
+	alterar o arquivo de configuração do botão:
+
+$ sudo nano /usr/share/applications/lxde-logout.desktop
+
+	nas linhas de nome, trocar Name[pt_BR] por:
+
+Name[pt_BR]=Opções de sessão
+
+	na linha de Icon, trocar para:
+
+Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
+
+====================================Configurando o JGMenu====================================
+	Com o JGMenu instalado, copiar os arquivos configurados na pasta raiz do JGMenu para a sua pasta do sistema:
+
+$ cp -r \diretório-das-configurações\ ~/.config/jgmenu/
+
+	Caso ainda não exista o diretório, ele pode ser criado com:
+
+$ mkdir ~/.config/jgmenu && sudo chmod -hR $USER ~/.config/jgmenu
+
+	Criar um arquivo .desktop em /usr/share/applications/:
+
+$ sudo nano /usr/share/applications/Apps.desktop
+
+	Preencher com a entrada a seguir:
+
+[Desktop Entry]
+Name=Apps
+GenericName=Menu
+Comment=Menu JGMenu
+Exec=jgmenu_run
+Categories=Settings;
+Icon=/usr/share/icons/Papirus-Dark/32x32/apps/distributor-logo-fedora.svg
+Type=Application
+Terminal=false
+
+	Será necessário criar um lançador no local desejado para abrir o menu de aplicativos.
+
+====================================Softwares Extras====================================
+	No Chromium, baixar o Microsoft Edge e instalar pelo terminal. Depois, se preciso, instalar os WebApps e adicionar aos favoritos.
+
+====================================Instalar as fontes MS e outras====================================
+	Reúna o conjunto de fontes a serem instaladas em uma pasta. Usaremos no exemplo a Pasta '~/Downloads/Fontes'.
+	Em seguida, crie via terminal uma pasta para abrigar as fontes no sistema:
+
+$ sudo mkdir /usr/share/fonts/others
+
+	Ainda no terminal, copie as fontes para a nova pasta sob o comando 'sudo':
+
+$ sudo cp ~/Downloads/Fontes/* /usr/share/fonts/others
+
+	Para definir as permissões dos arquivos, digite os seguintes comandos:
+
+$ sudo chown -hR root:$USER /usr/share/fonts/others
+
+$ sudo chmod 644 /usr/share/fonts/others/* -R
+
+$ sudo chmod 755 /usr/share/fonts/others
+
+	Por fim, para compilar os caches de informações de fonte via fontconfig, digite no terminal:
+
+$ sudo fc-cache -fv
+
+====================================Softwares de Inicialização====================================
+	No LXSession, colocar para iniciar:
+
+'onedrive --synchronize'; 'alsamixer'; 'compton'
+
+====================================Aterar aparência do LXDM(Tela de Login)====================================
+	!CUIDADO! Alterar o background do arquivo lxdm.config:
+
+$ sudo nano /etc/lxdm/lxdm.conf
+
+	Altere a linha abaixo de '## background of the greeter', atentando para a ausência do caractere '#' no início da linha alterada, para:
+
+bg='localização-do-arquivo'
+
+	Para alterar a imagem de Login, ícones e outras questões gráficas, modificar diretamente no tema existente (Industrial), através do diretório:
+
+/usr/share/lxdm/themes/Industrial
+
+	Para alterar cor, tamanho e fonte dos textos:
+
+$ sudo nano /usr/share/lxdm/themes/Industrial/gtk.css
+
+====================================Configuração das teclas de atalho Fn (Super/Menu, Áudio e Brilho)====================================
+	Com os comandos jgmenu, brightnessctl e alsamixer instalados, verifique qual a saída de keycode do atalho a ser utilizado (exemplo, fn+f6="XF86MonBrightnessUp"). Para isso use o comando:
+
+$ xev -1
+
+	Com o comando sendo reproduzido, aperte as teclas do atalho desejado, e note a parte da saída similar a "keycode ## (keysym #x#####, XF86NomedaAçãodoAtalho)". Anote o código similar a XF86NomedaAçãodoAtalho para cada atalho desejado.
+
+	Após isso, edite o documento ~/.config/openbox/lxde-rc.xml:
+
+$ sudo nano ~/.config/openbox/lxde-rc.xml
+
+	Adicione as seguintes linhas, com a substituição dos códigos correspondentes (caso necessário), na seção de keybindings:
+
+    <!-- Super to open Menu -->
+    <keybind key="Super_L">
+      <action name="Execute">
+       	<command>jgmenu_run</command>
+      </action>
+    </keybind>
+    <!-- Set Brightness Level Up -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+          <command>brightnessctl s 10%+</command>
+      </action>
+    </keybind>
+    <!-- Set Brightness Level Down -->
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+          <command>brightnessctl s 10%-</command>
+      </action>
+    </keybind>
+    <!-- Set Audio to Mute -->
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+          <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+    <!-- Set Audio level Up -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+          <command>amixer set Master 3500+</command>
+      </action>
+    </keybind>
+    <!-- Set Audio level Down -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+          <command>amixer set Master 3500-</command>
+      </action>
+    </keybind>
+
+	Ao reiniciar a sessão, verifique se fez efeito. 
+
+PS: em geral, o comando amixer vem instalado nas distribuições linux. Se esse não for o caso, é necessário instalar via dnf:
+
+$ sudo dnf install amixer
+
+ou ainda, caso deseje, utilize outro comando que obtenha o resultado pretendido para mutar ou mudar o volume
+
+====================================Desligar e Reboot====================================
+	Para desligar o PC, rodar sempre:
+
+$ sudo dnf upgrade -y --allowerasing --best && onedrive --synchronize  && poweroff
+
+	Para reboot rode no terminal:
+
+$ sudo dnf upgrade -y --allowerasing --best && onedrive --synchronize && reboot

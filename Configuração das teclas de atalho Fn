@@ -1,0 +1,51 @@
+Instale o comando brightnessctl via dnf
+
+$ sudo dnf install brightnessctl
+
+Verifique qual a saída de keycode do atalho a ser utilizado (exemplo, fn+f6="XF86MonBrightnessUp")
+
+para isso use o comando:
+$ xev -1
+
+com o comando sendo reproduzido, aperte as teclas do atalho desejado, e note a parte da saída similar a "keycode ## (keysym #x#####, XF86NomedaAçãodoAtalho)"
+
+Anote o código similar a XF86NomedaAçãodoAtalho para cada atalho desejado
+
+Após isso, edite o documento ~/.config/openbox/lxde-rc.xml, adicionando as seguintes linhas* na seção de keybindings:
+
+    <!-- Set Brightness Level Up -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+          <command>brightnessctl s 10%+</command>
+      </action>
+    </keybind>
+    <!-- Set Brightness Level Down -->
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+          <command>brightnessctl s 10%-</command>
+      </action>
+    </keybind>
+    <!-- Set Audio to Mute -->
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+          <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+    <!-- Set Audio level Up -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+          <command>amixer set Master 3500+</command>
+      </action>
+    </keybind>
+    <!-- Set Audio level Down -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+          <command>amixer set Master 3500-</command>
+      </action>
+    </keybind>
+
+*Note que cada linha segue um padrão, onde a variável 'keybind key' segue o código das ações desejadas, que são executadas através dos comandos selecionados para cada correspondente. Verifique se o código do atalho está de acordo com os comandos, e altere caso seja necessário.
+
+PS: em geral, o comando amixer vem instalado nas distribuições linux. Se esse não for o caso, é necessário instalar via dnf:
+$ sudo dnf install amixer
+ou ainda, caso deseje, utilize outro comando que obtenha o resultado pretendido para mutar ou mudar o volume
