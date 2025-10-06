@@ -1,60 +1,6 @@
 O QUE FAZER APÓS INSTALAR FEDORA-LXDE
 
-====================================Softwares====================================
-	Rodar no terminal:
-
-$ sudo dnf update -y --allowerasing --best; sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit; sudo dnf install -y --allowerasing --best https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm fedora-workstation-repositories; sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
-
-Isso vai atualizar o seu sistema operacional, desinstalar alguns aplicativos desnecessários, instalar os repositórios RPM Fusion, os de terceiros e os programas: 'Ffmpeg'; 'Git'; 'GTK4'; 'Compton'; 'Captura de Tela'; 'VLC'; 'Sylpheed'; 'Chromium'; 'Cheese'; 'OneDrive Free Client'; 'Evince - Visualizador de Documentos'; 'Libre Office'; 'Libre Office Draw'; 'GImageReader'; 'GIMP'; 'Brightness Control'; 'KolourPaint'; 'Qlipper'; 'JGMenu' e 'Window Manager Control'
-
-====================================Configurar o One Drive====================================
-	Rode no terminal:
-
-$ onedrive --synchronize
-
-
 ====================================Instalar e configurar os Temas do LXDE====================================
-Ícones: 
-- Papirus 
-link: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
-
-Widgets:
-- Adwaita-dark (GTK-2 vem por padrão, mas falta o GTK-3)
-	remover os arquivos originais:
-
-$ sudo rm -r /usr/share/themes/Adwaita-dark
-
-	copiar a base no OneDrive:
-
-$ sudo cp -r ~/OneDrive/Computação/Adwaita-dark /usr/share/themes/
-
-- Adwaita-Maia-dark (GTK-3 & GTK-2)
-link: https://github.com/kouros17/Adwaita-Maia-Dark
-
-Openbox(Borda da Janela): 
-- Tenebris
-link: https://github.com/shaggyz/openbox-tenebris
-
-Relógio digital: Formato do relógio (%a %d de %b %R); Formato da dica (%A, %d de %B de %Y - %X)
-
-Monitor de Baterias: Cor de fundo (#4e4e4e) ; Cor de carregamento (#00bfff) ; Cor de descarregamento (#dfdfdf)
-
-Botão de logout:
-	copiar o ícone personalizado para a pasta comum:
-
-$ sudo cp ./OneDrive/Computação/Ícones/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/
-
-	alterar o arquivo de configuração do botão:
-
-$ sudo nano /usr/share/applications/lxde-logout.desktop
-
-	nas linhas de nome, trocar Name[pt_BR] por:
-
-Name[pt_BR]=Opções de sessão
-
-	na linha de Icon, trocar para:
-
-Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
 
 ====================================Configurando o JGMenu====================================
 	Com o JGMenu instalado, copiar os arquivos configurados na pasta raiz do JGMenu para a sua pasta do sistema:
