@@ -81,9 +81,9 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 
 ### Opções de Interface
 
-* Relógio digital: Formato do relógio (%a %d de %b %R); Formato da dica (%A, %d de %B de %Y - %X)
+* Relógio digital: Formato do relógio `%a %d de %b %R`; Formato da dica `%A, %d de %B de %Y - %X`
 
-* Monitor de Baterias: Cor de fundo (#4e4e4e) ; Cor de carregamento (#00bfff) ; Cor de descarregamento (#dfdfdf)
+* Monitor de Baterias: Cor de fundo `#4e4e4e` ; Cor de carregamento `#00bfff` ; Cor de descarregamento `#dfdfdf`
 
 ### Botão de Logout
 
@@ -99,7 +99,7 @@ Alterar o arquivo de configuração do botão:
 $ sudo leafpad /usr/share/applications/lxde-logout.desktop
 ```
 
-Nas linhas de nome, trocar Name[pt_BR] por:
+Nas linhas de nome, trocar `Name[pt_BR]` por:
 
 ```ruby
 Name[pt_BR]=Opções de sessão
