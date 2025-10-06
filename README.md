@@ -109,7 +109,7 @@ Nas linhas de nome, trocar `Name[pt_BR]` por:
 Name[pt_BR]=Opções de sessão
 ```
 
-Na linha de Icon, trocar para:
+Na linha de `Icon`, trocar para:
 
 ```ruby
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
