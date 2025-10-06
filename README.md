@@ -49,7 +49,7 @@ Type=Application
 Exec=onedrive --synchronize
 Name=OneDrive Autostart Synchronize
 Comment=Execute a command to run an OneDrive synchronization at autostart session
-Icon=./icons/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diretório relacionado
+Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
 
 ## Instalar Temas e Alterar Aparência:
@@ -94,7 +94,7 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 Copiar o ícone personalizado para a pasta comum:
 
 ```ruby
-$ sudo cp ./icons/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/ #Ícone sugerido, encontra-se no repositório no diretório relacionado
+$ sudo cp ./src/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/ #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
 
 Alterar o arquivo de configuração do botão:
