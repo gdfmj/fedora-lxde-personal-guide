@@ -72,8 +72,7 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 #### Widgets:
-* [Adwaita-dark (GTK-2 vem por padrão, mas falta o GTK-3)](https://github.com/axxapy/Adwaita-dark-gtk2)
-
+* [Adwaita-dark (GTK-2 vem por padrão, mas falta o GTK-3)](https://github.com/axxapy/Adwaita-dark-gtk2);
 * [Adwaita-Maia-dark (GTK-3 & GTK-2)](https://github.com/kouros17/Adwaita-Maia-Dark)
 
 #### Openbox(Borda da Janela): 
@@ -81,9 +80,14 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 
 ### Opções de Interface
 
-* Relógio digital: Formato do relógio `%a %d de %b %R`; Formato da dica `%A, %d de %B de %Y - %X`
+#### Relógio digital:
+* Formato do relógio: `%a %d de %b %R`; 
+* Formato da dica: `%A, %d de %B de %Y - %X`
 
-* Monitor de Baterias: Cor de fundo `#4e4e4e` ; Cor de carregamento `#00bfff` ; Cor de descarregamento `#dfdfdf`
+#### Monitor de Baterias: 
+* Cor de fundo: `#4e4e4e`; 
+* Cor de carregamento: `#00bfff`; 
+* Cor de descarregamento: `#dfdfdf`
 
 ### Botão de Logout
 
