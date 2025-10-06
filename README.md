@@ -5,3 +5,5 @@ Vamos rodar no terminal um código para limpar os aplicativos que não serão us
 ```ruby
 $ sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit
 ```
+
+Agora clique [aqui](./Configurando.md) para acessar o teste.
