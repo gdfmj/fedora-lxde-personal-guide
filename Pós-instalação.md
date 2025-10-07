@@ -7,6 +7,7 @@ Sumário:
 * [Configurando o JGMenu](#configurando-o-jgmenu);
 * [WebApps e Sofwares Extras](#webapps-e-sofwares-extras);
 * [Softwares de Inicialização](#softwares-de-inicialização);
+* [Desligar/Reiniciar via Terminal](#desligarreiniciar-via-terminal).
 
 
 
@@ -318,7 +319,7 @@ Os próximos passos são referentes a outras etapas da instalação e configura�
 
 * [Índice](./README.md);
 * [Guia #1: Pós-instalação](#guia-1-o-que-fazer-após-instalar-o-fedora-lxde);
-* [Guia #2: Configurando o Menu LXDE](./#)
-* [Guia #3: Configurando LXDM (Tela de Login)](./#)
-* [Guia #4: Instalação de Fontes](./#)
-* [Guia #5: Configuração das teclas de atalho 'Fn'](./#)
+* [Guia #2: Configurando o Menu LXDE](./Menu-LXDE.md);
+* [Guia #3: Configurando LXDM (Tela de Login)](./LXDM-config.md);
+* [Guia #4: Instalação de Fontes](./Fontes.md);
+* [Guia #5: Configuração das teclas de atalho 'Fn'](./Teclas-de-Atalho.md).

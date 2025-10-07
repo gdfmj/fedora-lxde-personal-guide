@@ -1,44 +1,4 @@
-O QUE FAZER APÓS INSTALAR FEDORA-LXDE
-
-====================================Instalar as fontes MS e outras====================================
-	Reúna o conjunto de fontes a serem instaladas em uma pasta. Usaremos no exemplo a Pasta '~/Downloads/Fontes'.
-	Em seguida, crie via terminal uma pasta para abrigar as fontes no sistema:
-
-$ sudo mkdir /usr/share/fonts/others
-
-	Ainda no terminal, copie as fontes para a nova pasta sob o comando 'sudo':
-
-$ sudo cp ~/Downloads/Fontes/* /usr/share/fonts/others
-
-	Para definir as permissões dos arquivos, digite os seguintes comandos:
-
-$ sudo chown -hR root:$USER /usr/share/fonts/others
-
-$ sudo chmod 644 /usr/share/fonts/others/* -R
-
-$ sudo chmod 755 /usr/share/fonts/others
-
-	Por fim, para compilar os caches de informações de fonte via fontconfig, digite no terminal:
-
-$ sudo fc-cache -fv
-
-====================================Aterar aparência do LXDM(Tela de Login)====================================
-	!CUIDADO! Alterar o background do arquivo lxdm.config:
-
-$ sudo nano /etc/lxdm/lxdm.conf
-
-	Altere a linha abaixo de '## background of the greeter', atentando para a ausência do caractere '#' no início da linha alterada, para:
-
-bg='localização-do-arquivo'
-
-	Para alterar a imagem de Login, ícones e outras questões gráficas, modificar diretamente no tema existente (Industrial), através do diretório:
-
-/usr/share/lxdm/themes/Industrial
-
-	Para alterar cor, tamanho e fonte dos textos:
-
-$ sudo nano /usr/share/lxdm/themes/Industrial/gtk.css
-
+<!-->
 ====================================Configuração das teclas de atalho Fn (Super/Menu, Áudio e Brilho)====================================
 	Com os comandos jgmenu, brightnessctl e alsamixer instalados, verifique qual a saída de keycode do atalho a ser utilizado (exemplo, fn+f6="XF86MonBrightnessUp"). Para isso use o comando:
 
@@ -51,7 +11,8 @@ $ xev -1
 $ sudo nano ~/.config/openbox/lxde-rc.xml
 
 	Adicione as seguintes linhas, com a substituição dos códigos correspondentes (caso necessário), na seção de keybindings:
-
+<!-->
+```
     <!-- Super to open Menu -->
     <keybind key="Super_L">
       <action name="Execute">
@@ -88,7 +49,8 @@ $ sudo nano ~/.config/openbox/lxde-rc.xml
           <command>amixer set Master 3500-</command>
       </action>
     </keybind>
-
+```
+<!-->
 	Ao reiniciar a sessão, verifique se fez efeito. 
 
 PS: em geral, o comando amixer vem instalado nas distribuições linux. Se esse não for o caso, é necessário instalar via dnf:
@@ -96,12 +58,3 @@ PS: em geral, o comando amixer vem instalado nas distribuições linux. Se esse 
 $ sudo dnf install amixer
 
 ou ainda, caso deseje, utilize outro comando que obtenha o resultado pretendido para mutar ou mudar o volume
-
-====================================Desligar e Reboot====================================
-	Para desligar o PC, rodar sempre:
-
-$ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && poweroff
-
-	Para reboot rode no terminal:
-
-$ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && reboot
