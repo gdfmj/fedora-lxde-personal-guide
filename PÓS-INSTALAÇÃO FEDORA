@@ -1,37 +1,5 @@
 O QUE FAZER APÓS INSTALAR FEDORA-LXDE
 
-====================================Instalar e configurar os Temas do LXDE====================================
-
-====================================Configurando o JGMenu====================================
-	Com o JGMenu instalado, copiar os arquivos configurados na pasta raiz do JGMenu para a sua pasta do sistema:
-
-$ cp -r \diretório-das-configurações\ ~/.config/jgmenu/
-
-	Caso ainda não exista o diretório, ele pode ser criado com:
-
-$ mkdir ~/.config/jgmenu && sudo chmod -hR $USER ~/.config/jgmenu
-
-	Criar um arquivo .desktop em /usr/share/applications/:
-
-$ sudo nano /usr/share/applications/Apps.desktop
-
-	Preencher com a entrada a seguir:
-
-[Desktop Entry]
-Name=Apps
-GenericName=Menu
-Comment=Menu JGMenu
-Exec=jgmenu_run
-Categories=Settings;
-Icon=/usr/share/icons/Papirus-Dark/32x32/apps/distributor-logo-fedora.svg
-Type=Application
-Terminal=false
-
-	Será necessário criar um lançador no local desejado para abrir o menu de aplicativos.
-
-====================================Softwares Extras====================================
-	No Chromium, baixar o Microsoft Edge e instalar pelo terminal. Depois, se preciso, instalar os WebApps e adicionar aos favoritos.
-
 ====================================Instalar as fontes MS e outras====================================
 	Reúna o conjunto de fontes a serem instaladas em uma pasta. Usaremos no exemplo a Pasta '~/Downloads/Fontes'.
 	Em seguida, crie via terminal uma pasta para abrigar as fontes no sistema:
@@ -53,11 +21,6 @@ $ sudo chmod 755 /usr/share/fonts/others
 	Por fim, para compilar os caches de informações de fonte via fontconfig, digite no terminal:
 
 $ sudo fc-cache -fv
-
-====================================Softwares de Inicialização====================================
-	No LXSession, colocar para iniciar:
-
-'onedrive --synchronize'; 'alsamixer'; 'compton'
 
 ====================================Aterar aparência do LXDM(Tela de Login)====================================
 	!CUIDADO! Alterar o background do arquivo lxdm.config:
@@ -137,8 +100,8 @@ ou ainda, caso deseje, utilize outro comando que obtenha o resultado pretendido 
 ====================================Desligar e Reboot====================================
 	Para desligar o PC, rodar sempre:
 
-$ sudo dnf upgrade -y --allowerasing --best && onedrive --synchronize  && poweroff
+$ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && poweroff
 
 	Para reboot rode no terminal:
 
-$ sudo dnf upgrade -y --allowerasing --best && onedrive --synchronize && reboot
+$ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && reboot

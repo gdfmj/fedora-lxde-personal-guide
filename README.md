@@ -6,4 +6,6 @@ Sumário do Repositório:
 
 * [Guia #1: Pós-instalação](./Pós-instalação.md)
 * [Guia #2: Configurando o Menu LXDE](./#)
-* [Guia #3: Configuração das teclas de atalho 'Fn'](./#)
+* [Guia #3: Configurando LXDM (Tela de Login)](./#)
+* [Guia #4: Instalação de Fontes](./#)
+* [Guia #5: Configuração das teclas de atalho 'Fn'](./#)
