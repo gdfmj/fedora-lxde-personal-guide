@@ -1,28 +1,32 @@
 # Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)
 
+Sumário:
+* [Softwares](./#softwares)
+
+
 ## Softwares
 
 Vamos rodar no terminal um código para limpar os aplicativos que não serão usados, pois serão substituidos por outros de nossa preferência:
 
-```ruby
+```powershell
 $ sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit
 ```
 
 Após a limpeza de aplicativos, vamos atualizar os aplicativos restantes:
 
-```ruby
+```powershell
 $ sudo dnf update -y --allowerasing --best
 ```
 
 Instalar os repositórios [RPM Fusion](https://rpmfusion.org/) Free & Nonfree:
 
-```ruby
+```powershell
 $ sudo dnf install -y --allowerasing --best https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm fedora-workstation-repositories
 ```
 
 Agora vamos fazer a instalação dos pacotes rpm de aplicativos que serão melhor aproveitados em nossa curadoria:
 
-```ruby
+```powershell
 $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
 ```
 
@@ -30,23 +34,23 @@ $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton
 
 Rode no terminal:
 
-```ruby
+```powershell
 $ onedrive --sync
 ```
 
 Seguir as instruções impressas no terminal para vinculação da conta e esperar o download dos arquivos e diretórios do servidor. Ao finalizar, é necessário configurar a sincronização automática ao iniciar uma nova sessão com o usuário. Para isso, rode no terminal:
 
-```ruby
+```powershell
 $ sudo mkdir ~/.config/autostart/ && sudo leafpad ~/.config/autostart/OneDrive-autostart-synchronize.desktop
 ```
 
 Na tela do leafpad, escreva o seguinte conteúdo:
 
-```ruby
+```powershell
 [Desktop Entry]
 
 Type=Application
-Exec=onedrive --synchronize
+Exec=onedrive --sync
 Name=OneDrive Autostart Synchronize
 Comment=Execute a command to run an OneDrive synchronization at autostart session
 Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diretório relacionado
@@ -58,13 +62,13 @@ Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diret
 
 Remover os arquivos originais:
 
-```ruby
+```powershell
 $ sudo rm -r /usr/share/themes/Adwaita-dark
 ```
 
 Baixar os repositórios:
 
-```ruby
+```powershell
 $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git /usr/share/themes/Papirus && sudo git clone https://github.com/kouros17/Adwaita-Maia-Dark.git /usr/share/themes/Adwaita-Maia-Dark && sudo git clone https://github.com/axxapy/Adwaita-dark-gtk2.git /usr/share/themes/Adwaita-Dark && sudo git clone https://github.com/shaggyz/openbox-tenebris.git /usr/share/themes/Tenebris
 ```
 
@@ -93,24 +97,24 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 
 Copiar o ícone personalizado para a pasta comum:
 
-```ruby
+```powershell
 $ sudo cp ./src/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/ #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
 
 Alterar o arquivo de configuração do botão:
 
-```ruby
+```powershell
 $ sudo leafpad /usr/share/applications/lxde-logout.desktop
 ```
 
 Nas linhas de nome, trocar `Name[pt_BR]` por:
 
-```ruby
+```powershell
 Name[pt_BR]=Opções de sessão
 ```
 
 Na linha de `Icon`, trocar para:
 
-```ruby
+```powershell
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
 ```
