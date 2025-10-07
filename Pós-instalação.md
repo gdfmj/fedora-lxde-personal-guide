@@ -15,25 +15,25 @@ Sumário:
 
 Vamos rodar no terminal um código para limpar os aplicativos que não serão usados, pois serão substituidos por outros de nossa preferência:
 
-```powershell
+```ruby
 $ sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit
 ```
 
 Após a limpeza de aplicativos, vamos atualizar os aplicativos restantes:
 
-```powershell
+```ruby
 $ sudo dnf update -y --allowerasing --best
 ```
 
 Instalar os repositórios [RPM Fusion](https://rpmfusion.org/) Free & Nonfree:
 
-```powershell
+```ruby
 $ sudo dnf install -y --allowerasing --best https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm fedora-workstation-repositories
 ```
 
 Agora vamos fazer a instalação dos pacotes rpm de aplicativos que serão melhor aproveitados em nossa curadoria:
 
-```powershell
+```ruby
 $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
 ```
 
@@ -41,19 +41,19 @@ $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton
 
 Rode no terminal:
 
-```powershell
+```ruby
 $ onedrive --sync
 ```
 
 Seguir as instruções impressas no terminal para vinculação da conta e esperar o download dos arquivos e diretórios do servidor. Ao finalizar, é necessário configurar a sincronização automática ao iniciar uma nova sessão com o usuário. Para isso, rode no terminal:
 
-```powershell
+```ruby
 $ sudo mkdir ~/.config/autostart/ && sudo leafpad ~/.config/autostart/OneDrive-autostart-synchronize.desktop
 ```
 
 Na tela do leafpad, escreva o seguinte conteúdo:
 
-```powershell
+```ruby
 [Desktop Entry]
 
 Type=Application
@@ -69,13 +69,13 @@ Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diret
 
 Remover os arquivos originais:
 
-```powershell
+```ruby
 $ sudo rm -r /usr/share/themes/Adwaita-dark
 ```
 
 Baixar os repositórios:
 
-```powershell
+```ruby
 $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git /usr/share/themes/Papirus && sudo git clone https://github.com/kouros17/Adwaita-Maia-Dark.git /usr/share/themes/Adwaita-Maia-Dark && sudo git clone https://github.com/axxapy/Adwaita-dark-gtk2.git /usr/share/themes/Adwaita-Dark && sudo git clone https://github.com/shaggyz/openbox-tenebris.git /usr/share/themes/Tenebris
 ```
 
@@ -104,25 +104,25 @@ $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/pap
 
 Copiar o ícone personalizado para a pasta comum:
 
-```powershell
+```ruby
 $ sudo cp ./src/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/ #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
 
 Alterar o arquivo de configuração do botão:
 
-```powershell
+```ruby
 $ sudo leafpad /usr/share/applications/lxde-logout.desktop
 ```
 
 Nas linhas de nome, trocar `Name[pt_BR]` por:
 
-```powershell
+```ruby
 Name[pt_BR]=Opções de sessão
 ```
 
 Na linha de `Icon`, trocar para:
 
-```powershell
+```ruby
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
 ```
 
@@ -130,7 +130,7 @@ Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
 
 Com o `jgmenu` instalado, criar o diretório de configuração - caso ainda não exista - e mudar as permissões de usuário:
 
-```powershell
+```ruby
 $ mkdir ~/.config/jgmenu && sudo chmod -hR $USER ~/.config/jgmenu
 ```
 
@@ -144,13 +144,13 @@ São três arquivos que definem as configurações do `jgmenu`:
 
 Agora com o `leafpad`, vamos criar um arquivo chamado `jgmenurc` dentro desse diretório com o seguinte comando:
 
-```powershell
+```ruby
 $ sudo leafpad ~/.config/jgmenu/jgmenurc
 ```
 
 O arquivo `jgmenurc` deve conter os parâmetros seguintes:
 
-```powershell
+```ruby
 stay_alive           = 1
 position_mode        = fixed
 menu_width           = 360
@@ -187,13 +187,13 @@ color_title_border = #2f2f2f 100
 
 Um segundo arquivo que deve ser criado no diretório é o `prepend.csv`, novamente utilizando o `leafpad`:
 
-```powershell
+```ruby
 $ sudo leafpad ~/.config/jgmenu/prepend.csv
 ```
 
 O conteúdo do arquivo `prepend.csv` depende da [instalação dos ícones Papirus](#ícones):
 
-```powershell
+```ruby
 ^sep(Menu de Aplicativos)
 Terminal,lxterminal,/usr/share/icons/Papirus-Dark/128x128/apps/terminal.svg
 Arquivos,pcmanfm,/usr/share/icons/Papirus-Dark/128x128/places/user-home.svg
@@ -207,13 +207,13 @@ Office,libreoffice,/usr/share/icons/Papirus-Dark/128x128/apps/libreoffice.svg
 
 O último arquivo a ser adicionado no diretório é o `schema`,  mais uma vez via `leafpad`:
 
-```powershell
+```ruby
 $ sudo leafpad ~/.config/jgmenu/schema
 ```
 
 Mais uma vez é recomendada a [instalação dos ícones Papirus](#ícones):
 
-```powershell
+```ruby
 Name=Acessórios
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/administration.svg
 Categories=Accessibility;Core;Utility;Development
@@ -243,13 +243,13 @@ Categories=Settings;SystemConfig
 
 Para que o jgmenu tenha um funcionamento adequado, vamos criar um arquivo `.desktop` em `/usr/share/applications/`:
 
-```powershell
+```ruby
 $ sudo leafpad /usr/share/applications/Apps.desktop
 ```
 
 Preencher com a entrada a seguir:
 
-```powershell
+```ruby
 [Desktop Entry]
 Name=Apps
 GenericName=Menu
@@ -270,25 +270,25 @@ No `Chromium`, acessar e instalar os seguintes sites como WebApps: ['Whatsapp'](
 
 Alguns Softwares ainda precisam ser instalados de modo alternativo. É o caso do [JDownloader 2](https://jdownloader.org/jdownloader2), o qual pode ser instalado via terminal, a partir da pasta `~/Downloads`:
 
-```powershell
+```ruby
 $ cd Downloads
 ```
 
 Após entrar na pasta, execute:
 
-```powershell
+```ruby
 $ wget -c http://installer.jdownloader.org/JD2Setup_x64.sh
 ```
 
 Após o download, dê permissão de execução ao executável:
 
-```powershell
+```ruby
 $ chmod +x JD2Setup_x64.sh
 ```
 
 E execute-o com:
 
-```powershell
+```ruby
 $ sh JD2Setup_x64.sh
 ```
 
@@ -303,13 +303,13 @@ No LXSession, colocar para iniciar:
 
 Para cada finalização é recomendado o uso do terminal. Para desligar o PC verificando atualizações, rodar sempre:
 
-```powershell
+```ruby
 $ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && poweroff
 ```
 
 Para reboot, rode no terminal:
 
-```powershell
+```ruby
 $ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && reboot
 ```
 
