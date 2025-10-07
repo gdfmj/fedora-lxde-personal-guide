@@ -1,5 +1,7 @@
 # Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)
+
 Sumário:
+
 * [Softwares](#softwares);
 * [Configuarar o OneDrive](#configurar-o-one-drive);
 * [Instalar Temas e Alterar Aparência](#instalar-temas-e-alterar-aparência);
@@ -8,32 +10,47 @@ Sumário:
 * [Softwares de Inicialização](#softwares-de-inicialização);
 * [Desligar/Reiniciar via Terminal](#desligarreiniciar-via-terminal).
 ## Softwares
+
 Vamos rodar no terminal um código para limpar os aplicativos que não serão usados, pois serão substituidos por outros de nossa preferência:
+
 ```
 $ sudo dnf remove xpad abiword gnumeric pidgin midori sylpheed asunder brasero dnfdragora clipit
 ```
+
 Após a limpeza de aplicativos, vamos atualizar os aplicativos restantes:
+
 ```
 $ sudo dnf update -y --allowerasing --best
 ```
+
 Instalar os repositórios [RPM Fusion](https://rpmfusion.org/) Free & Nonfree:
+
 ```
 $ sudo dnf install -y --allowerasing --best https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm fedora-workstation-repositories
 ```
+
 Agora vamos fazer a instalação dos pacotes rpm de aplicativos que serão melhor aproveitados em nossa curadoria:
+
 ```
 $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
 ```
+
 ## Configurar o One Drive
+
 Rode no terminal:
+
 ```
 $ onedrive --sync
 ```
+
 Seguir as instruções impressas no terminal para vinculação da conta e esperar o download dos arquivos e diretórios do servidor. Ao finalizar, é necessário configurar a sincronização automática ao iniciar uma nova sessão com o usuário. Para isso, rode no terminal:
+
 ```
 $ sudo mkdir ~/.config/autostart/ && sudo leafpad ~/.config/autostart/OneDrive-autostart-synchronize.desktop
 ```
+
 Na tela do leafpad, escreva o seguinte conteúdo:
+
 ```
 [Desktop Entry]
 
@@ -43,64 +60,99 @@ Name=OneDrive Autostart Synchronize
 Comment=Execute a command to run an OneDrive synchronization at autostart session
 Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
+
 ## Instalar Temas e Alterar Aparência
+
 ### Temas
+
 Remover os arquivos originais:
+
 ```
 $ sudo rm -r /usr/share/themes/Adwaita-dark
 ```
+
 Baixar os repositórios:
+
 ```
 $ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git /usr/share/themes/Papirus && sudo git clone https://github.com/kouros17/Adwaita-Maia-Dark.git /usr/share/themes/Adwaita-Maia-Dark && sudo git clone https://github.com/axxapy/Adwaita-dark-gtk2.git /usr/share/themes/Adwaita-Dark && sudo git clone https://github.com/shaggyz/openbox-tenebris.git /usr/share/themes/Tenebris
 ```
+
 #### Ícones: 
+
 * [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+
 #### Widgets:
+
 * [Adwaita-dark](https://github.com/axxapy/Adwaita-dark-gtk2) (GTK-2 vem por padrão, mas falta o GTK-3);
 * [Adwaita-Maia-dark](https://github.com/kouros17/Adwaita-Maia-Dark) (GTK-3 & GTK-2)
+
 #### Openbox(Borda da Janela): 
+
 * [Tenebris](https://github.com/shaggyz/openbox-tenebris)
+
 ### Opções de Interface
+
 #### Relógio digital:
+
 * Formato do relógio: `%a %d de %b %R`; 
 * Formato da dica: `%A, %d de %B de %Y - %X`
+
 #### Monitor de Baterias: 
+
 * Cor de fundo: `#4e4e4e`; 
 * Cor de carregamento: `#00bfff`; 
 * Cor de descarregamento: `#dfdfdf`
+
 ### Botão de Logout
+
 Copiar o ícone personalizado para a pasta comum:
+
 ```
 $ sudo cp ./src/system-log-out.png /usr/share/icons/Papirus-Dark/128x128/apps/ #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
+
 Alterar o arquivo de configuração do botão:
+
 ```
 $ sudo leafpad /usr/share/applications/lxde-logout.desktop
 ```
+
 Nas linhas de nome, trocar `Name[pt_BR]` por:
+
 ```
 Name[pt_BR]=Opções de sessão
 ```
+
 Na linha de `Icon`, trocar para:
+
 ```
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
 ```
+
 ## Configurando o [JGMenu](https://github.com/jgmenu/jgmenu)
+
 Com o `jgmenu` instalado, criar o diretório de configuração - caso ainda não exista - e mudar as permissões de usuário:
+
 ```
 $ mkdir ~/.config/jgmenu && sudo chmod -hR $USER ~/.config/jgmenu
 ```
+
 São três arquivos que definem as configurações do `jgmenu`:
 
 * [`jgmenurc`](#jgmenurc): configura os parâmetros gráficos do menu;
 * [`prepend.csv`](#prependcsv): configura os aplicativos fixos do menu;
 * [`schema`](#schema): configura as sessões de aplicativos do menu.
+
 ### jgmenurc
+
 Agora com o `leafpad`, vamos criar um arquivo chamado `jgmenurc` dentro desse diretório com o seguinte comando:
+
 ```
 $ sudo leafpad ~/.config/jgmenu/jgmenurc
 ```
+
 O arquivo `jgmenurc` deve conter os parâmetros seguintes:
+
 ```
 stay_alive           = 1
 position_mode        = fixed
@@ -133,12 +185,17 @@ color_title_fg = #ffffff 100
 color_title_bg = #2f2f2f 100
 color_title_border = #2f2f2f 100
 ```
+
 ### prepend.csv
+
 Um segundo arquivo que deve ser criado no diretório é o `prepend.csv`, novamente utilizando o `leafpad`:
+
 ```
 $ sudo leafpad ~/.config/jgmenu/prepend.csv
 ```
+
 O conteúdo do arquivo `prepend.csv` depende da [instalação dos ícones Papirus](#ícones):
+
 ```
 ^sep(Menu de Aplicativos)
 Terminal,lxterminal,/usr/share/icons/Papirus-Dark/128x128/apps/terminal.svg
@@ -148,12 +205,17 @@ E-mail,sylpheed,/usr/share/icons/Papirus-Dark/128x128/apps/mailspring.svg
 Office,libreoffice,/usr/share/icons/Papirus-Dark/128x128/apps/libreoffice.svg
 ^sep()
 ```
+
 ### schema
+
 O último arquivo a ser adicionado no diretório é o `schema`,  mais uma vez via `leafpad`:
+
 ```
 $ sudo leafpad ~/.config/jgmenu/schema
 ```
+
 Mais uma vez é recomendada a [instalação dos ícones Papirus](#ícones):
+
 ```
 Name=Acessórios
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/administration.svg
@@ -179,12 +241,17 @@ Name=Configurações
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/configurator.svg
 Categories=Settings;SystemConfig
 ```
+
 ### Lançador do Menu
+
 Para que o jgmenu tenha um funcionamento adequado, vamos criar um arquivo `.desktop` em `/usr/share/applications/`:
+
 ```
 $ sudo leafpad /usr/share/applications/Apps.desktop
 ```
+
 Preencher com a entrada a seguir:
+
 ```
 [Desktop Entry]
 Name=Apps
@@ -196,41 +263,61 @@ Icon=/usr/share/icons/Papirus-Dark/32x32/apps/distributor-logo-fedora.svg
 Type=Application
 Terminal=false
 ```
+
 Para finalizar esta etapa, criar via interface gráfica um lançador no local desejado para abrir o menu de aplicativos.
+
 ## WebApps e Sofwares Extras
+
 No `Chromium`, acessar e instalar os seguintes sites como WebApps: ['Whatsapp'](https://web.whatsapp.com/); ['OneDrive'](https://onedrive.live.com/); ['Kindle'](https://ler.amazon.com.br); ['Google Tradutor'](https://translate.google.com/?sl=pt&tl=en&op=translate) e ['YouTube Music'](https://music.youtube.com/).
 
 Alguns Softwares ainda precisam ser instalados de modo alternativo. É o caso do [JDownloader 2](https://jdownloader.org/jdownloader2), o qual pode ser instalado via terminal, a partir da pasta `~/Downloads`:
+
 ```
 $ cd Downloads
 ```
+
 Após entrar na pasta, execute:
+
 ```
 $ wget -c http://installer.jdownloader.org/JD2Setup_x64.sh
 ```
+
 Após o download, dê permissão de execução ao executável:
+
 ```
 $ chmod +x JD2Setup_x64.sh
 ```
+
 E execute-o com:
+
 ```
 $ sh JD2Setup_x64.sh
 ```
+
 Será exibido o instalador do JDownloader 2. É só seguir os passos e instalar o programa.
+
 ## Softwares de Inicialização
-No LXSession, colocar para iniciar:
-`onedrive --sync`; `alsamixer`; `compton`
+
+No LXSession, colocar para iniciar: `onedrive --sync`; `alsamixer`; `compton`
+
 ## Desligar/Reiniciar via Terminal
+
 Para cada finalização é recomendado o uso do terminal. Para desligar o PC verificando atualizações, rodar sempre:
+
 ```
 $ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && poweroff
 ```
+
 Para reboot, rode no terminal:
+
 ```
 $ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && reboot
 ```
+
 # Próximos passos
+
 Os próximos passos são referentes a outras etapas da instalação e configuração do sistema e por esse motivo estão em seus próprios guias. Segue a lista de documentação para navegação no repositório:
+
 * [Índice](./README.md);
 * [Guia #1: Pós-instalação](#guia-1-o-que-fazer-após-instalar-o-fedora-lxde);
 * [Guia #2: Configurando o Menu LXDE](./Menu-LXDE.md);
