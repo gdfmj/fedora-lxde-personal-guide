@@ -3,19 +3,22 @@ body{
     background-color: #353535ff;
 }
 h1, h2, h3, h4, h5 {
-    color: #f7f7f7ff;
+    color: #fafafaff;
 }
 a {
     color: #e20000ff;
 }
 p, ul, ol {
-    color: #ddddddff;
+    color: #f2f2f2ff;
 }
 code {
     background-color: #000000;
     color: #ffffffff;
 }
 .highlight {
+    background-color: #000000;
+}
+.markdown-body code, .markdown-body tt {
     background-color: #000000;
 }
 .markdown-body .highlight pre, .markdown-body pre {
