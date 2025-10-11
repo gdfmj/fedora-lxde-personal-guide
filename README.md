@@ -1,3 +1,5 @@
+<link href="http://github.com/yrgoldteeth/darkdowncss/raw/master/darkdown.css" rel="stylesheet"></link> 
+
 # Guia de Personalização
 
 Repositório contendo um guia para configuração e personalização pessoal após uma nova instalação do [Fedora LXDE](https://fedorabr.org/categories/lxde).
