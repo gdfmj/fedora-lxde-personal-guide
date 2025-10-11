@@ -1,4 +1,23 @@
-<link href="http://github.com/yrgoldteeth/darkdowncss/raw/master/darkdown.css" rel="stylesheet"></link> 
+<style>
+    body{
+        background-color: #353535ff;
+    }
+    h1, h2, h3, h4 {
+        color: #f7f7f7ff;
+    }
+    a {
+        color: #e20000ff;
+    }
+    p, ul, ol {
+        color: #ddddddff;
+    }
+    code {
+        color: #ffffffff;
+    }
+    .highlight {
+        background-color: #00000000;
+    }
+</style>
 
 # Guia de Personalização
 
