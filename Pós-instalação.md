@@ -14,7 +14,7 @@
     code {
         color: #ffffffff;
     }
-    .highlight {
+    .language-plaintext .highlighter-rouge {
         background-color: #00000000;
     }
 </style>
