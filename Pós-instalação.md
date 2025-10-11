@@ -12,16 +12,8 @@
         color: #ddddddff;
     }
     code {
+        background-color: #00000000;
         color: #ffffffff;
-    }
-    .language-plaintext {
-        background-color: #00000000;
-    }
-     .highlighter-rouge {
-        background-color: #00000000;
-    }
-     .highlight {
-        background-color: #00000000;
     }
 </style>
 
