@@ -15,10 +15,8 @@
         background-color: #00000000;
         color: #ffffffff;
     }
-    pre, .highlight {
-        background-color: #00000000;
-    }
-    .highlight {
+    .markdown-body .highlight pre,
+.markdown-body pre {
         background-color: #00000000;
     }
 </style>
