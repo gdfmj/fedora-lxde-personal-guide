@@ -15,6 +15,9 @@
         background-color: #00000000;
         color: #ffffffff;
     }
+    .markdown-body .highlight pre, .markdown-body pre {
+        background-color: #00000000;
+    }
 </style>
 
 # Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)
