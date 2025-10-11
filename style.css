@@ -31,3 +31,8 @@ code {
 .markdown-body .highlight pre, .markdown-body pre {
     background-color: #000000ff;
 }
+
+::selection {
+    background-color: #ff3737ff;
+    color: #fafafaff;
+}
