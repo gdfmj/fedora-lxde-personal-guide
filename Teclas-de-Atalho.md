@@ -68,7 +68,7 @@ Adicione as seguintes linhas, com a substituição dos códigos correspondentes 
 ```
 Ao reiniciar a sessão, verifique se fez efeito. 
 
-#### PS: em geral, o comando `amixer` vem instalado nas distribuições linux. Se esse não for o caso, é necessário instalar via `dnf`:
+#### PS: em geral, o comando <span style="font-weight: normal;">`amixer`</span> vem instalado nas distribuições linux. Se esse não for o caso, é necessário instalar via <span style="font-weight: normal;">`dnf`</span>:
 ```
 $ sudo dnf install amixer
 ```

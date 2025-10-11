@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-    color: rgb(255, 55, 55);
+    color: #ff3737ff;
 }
 
 p, ul, ol {
@@ -16,18 +16,18 @@ p, ul, ol {
 }
 
 code {
-    background-color: #000000;
+    background-color: #000000ff;
     color: #ffffffff;
 }
 
 .highlight {
-    background-color: #000000;
+    background-color: #000000ff;
 }
 
 .markdown-body code, .markdown-body tt {
-    background-color: #000000;
+    background-color: #000000ff;
 }
 
 .markdown-body .highlight pre, .markdown-body pre {
-    background-color: #000000;
+    background-color: #000000ff;
 }
