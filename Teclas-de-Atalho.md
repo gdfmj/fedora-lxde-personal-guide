@@ -1,3 +1,30 @@
+<link rel="stylesheet" href="./style.css">
+<style>
+    /*body{
+        background-color: #353535ff;
+    }
+    h1, h2, h3, h4 {
+        color: #f7f7f7ff;
+    }
+    a {
+        color: #e20000ff;
+    }
+    p, ul, ol {
+        color: #ddddddff;
+    }
+    code {
+        background-color: #000000;
+        color: #ffffffff;
+    }
+    .highlight {
+        background-color: #000000;
+    }
+    .markdown-body .highlight pre,
+.markdown-body pre {
+        background-color: #000000;
+    }*/
+</style>
+
 # Guia #5: Configuração das teclas de atalho 'Fn'
 Faremos a configuração das teclas de atalho Fn (Super/Menu, Áudio e Brilho).
 

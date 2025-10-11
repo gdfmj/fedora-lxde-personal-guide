@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="./style.css">
 <style>
-    body{
+    /*body{
         background-color: #353535ff;
     }
     h1, h2, h3, h4 {
@@ -21,7 +22,7 @@
     .markdown-body .highlight pre,
 .markdown-body pre {
         background-color: #000000;
-    }
+    }*/
 </style>
 
 # Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)

@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="./style.css">
 <style>
-    body{
+    /*body{
         background-color: #353535ff;
     }
     h1, h2, h3, h4 {
@@ -12,11 +13,16 @@
         color: #ddddddff;
     }
     code {
+        background-color: #000000;
         color: #ffffffff;
     }
     .highlight {
-        background-color: #00000000;
+        background-color: #000000;
     }
+    .markdown-body .highlight pre,
+.markdown-body pre {
+        background-color: #000000;
+    }*/
 </style>
 
 # Guia de Personalização
