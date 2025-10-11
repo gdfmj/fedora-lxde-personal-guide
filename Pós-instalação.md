@@ -1,29 +1,18 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
-<style>
-    /*body{
-        background-color: #353535ff;
-    }
-    h1, h2, h3, h4 {
-        color: #f7f7f7ff;
-    }
-    a {
-        color: #e20000ff;
-    }
-    p, ul, ol {
-        color: #ddddddff;
-    }
-    code {
-        background-color: #000000;
-        color: #ffffffff;
-    }
-    .highlight {
-        background-color: #000000;
-    }
-    .markdown-body .highlight pre,
-.markdown-body pre {
-        background-color: #000000;
-    }*/
-</style>
+
+## [Sumário](#sumário)
+
+* [Ínício](./README.md);
+* [Guia #1: Pós-instalação](#guia-1-o-que-fazer-após-instalar-o-fedora-lxde);
+* [Guia #2: Configurando o Menu LXDE](./Menu-LXDE.md);
+* [Guia #3: Configurando LXDM (Tela de Login)](./LXDM-config.md);
+* [Guia #4: Instalação de Fontes](./Fontes.md);
+* [Guia #5: Configuração das teclas de atalho 'Fn'](./Teclas-de-Atalho.md).
+
+-------------------
 
 # Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)
 
@@ -341,13 +330,4 @@ Para reboot, rode no terminal:
 $ sudo dnf upgrade -y --allowerasing --best && onedrive --sync && reboot
 ```
 
-# Próximos passos
-
-Os próximos passos são referentes a outras etapas da instalação e configuração do sistema e por esse motivo estão em seus próprios guias. Segue a lista de documentação para navegação no repositório:
-
-* [Índice](./README.md);
-* [Guia #1: Pós-instalação](#guia-1-o-que-fazer-após-instalar-o-fedora-lxde);
-* [Guia #2: Configurando o Menu LXDE](./Menu-LXDE.md);
-* [Guia #3: Configurando LXDM (Tela de Login)](./LXDM-config.md);
-* [Guia #4: Instalação de Fontes](./Fontes.md);
-* [Guia #5: Configuração das teclas de atalho 'Fn'](./Teclas-de-Atalho.md).
+[Voltar ao Topo](#sumário)
