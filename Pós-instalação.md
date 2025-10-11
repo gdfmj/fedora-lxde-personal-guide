@@ -14,7 +14,13 @@
     code {
         color: #ffffffff;
     }
-    .language-plaintext .highlighter-rouge {
+    .language-plaintext {
+        background-color: #00000000;
+    }
+     .highlighter-rouge {
+        background-color: #00000000;
+    }
+     .highlight {
         background-color: #00000000;
     }
 </style>
