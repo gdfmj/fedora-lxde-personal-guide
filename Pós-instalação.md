@@ -15,10 +15,10 @@
         background-color: #00000000;
         color: #ffffffff;
     }
-    .highlight {
+    pre, .highlight {
         background-color: #00000000;
     }
-    .highlight pre {
+    .highlight {
         background-color: #00000000;
     }
 </style>
