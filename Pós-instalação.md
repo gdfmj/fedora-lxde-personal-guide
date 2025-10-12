@@ -90,7 +90,7 @@ $ sudo rm -r /usr/share/themes/Adwaita-dark
 Baixar os repositórios:
 
 ```
-$ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git /usr/share/themes/Papirus && sudo git clone https://github.com/kouros17/Adwaita-Maia-Dark.git /usr/share/themes/Adwaita-Maia-Dark && sudo git clone https://github.com/axxapy/Adwaita-dark-gtk2.git /usr/share/themes/Adwaita-Dark && sudo git clone https://github.com/shaggyz/openbox-tenebris.git /usr/share/themes/Tenebris
+$ cd ~/Downloads && sudo git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git /usr/share/icons/Papirus && sudo git clone https://github.com/kouros17/Adwaita-Maia-Dark.git /usr/share/themes/Adwaita-Maia-Dark && sudo git clone https://github.com/axxapy/Adwaita-dark-gtk2.git /usr/share/themes/Adwaita-Dark && sudo git clone https://github.com/shaggyz/openbox-tenebris.git /usr/share/themes/Tenebris
 ```
 
 #### Ícones: 
