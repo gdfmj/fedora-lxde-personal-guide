@@ -19,8 +19,8 @@
 Sumário:
 
 * [Softwares](#softwares);
-* [Configuarar o OneDrive](#configurar-o-one-drive);
 * [Instalar Temas e Alterar Aparência](#instalar-temas-e-alterar-aparência);
+* [Configuarar o OneDrive](#configurar-o-one-drive);
 * [Configurando o JGMenu](#configurando-o-jgmenu);
 * [WebApps e Sofwares Extras](#webapps-e-sofwares-extras);
 * [Softwares de Inicialização](#softwares-de-inicialização);
@@ -49,32 +49,6 @@ Agora vamos fazer a instalação dos pacotes rpm de aplicativos que serão melho
 
 ```
 $ sudo dnf install -y --allowerasing --best git gtk4 ffmpeg ffmpeg-devel compton vlc gnome-screenshot evince libreoffice libreoffice-langpack-pt-BR sylpheed chromium cheese onedrive libreoffice-draw gimagereader-gtk gimp brightnessctl kolourpaint qlipper gxkb xev jgmenu-gtktheme jgmenu wmctrl
-```
-
-## Configurar o One Drive
-
-Rode no terminal:
-
-```
-$ onedrive --sync
-```
-
-Seguir as instruções impressas no terminal para vinculação da conta e esperar o download dos arquivos e diretórios do servidor. Ao finalizar, é necessário configurar a sincronização automática ao iniciar uma nova sessão com o usuário. Para isso, rode no terminal:
-
-```
-$ sudo mkdir ~/.config/autostart/ && sudo leafpad ~/.config/autostart/OneDrive-autostart-synchronize.desktop
-```
-
-Na tela do leafpad, escreva o seguinte conteúdo:
-
-```
-[Desktop Entry]
-
-Type=Application
-Exec=onedrive --sync
-Name=OneDrive Autostart Synchronize
-Comment=Execute a command to run an OneDrive synchronization at autostart session
-Icon=./src/cloud_icon.svg #Ícone sugerido, encontra-se no repositório no diretório relacionado
 ```
 
 ## Instalar Temas e Alterar Aparência
@@ -143,6 +117,32 @@ Na linha de `Icon`, trocar para:
 
 ```
 Icon=/usr/share/icons/Papirus-Dark/128x128/apps/system-log-out.png
+```
+
+## Configurar o One Drive
+
+Rode no terminal:
+
+```
+$ onedrive --sync
+```
+
+Seguir as instruções impressas no terminal para vinculação da conta e esperar o download dos arquivos e diretórios do servidor. Ao finalizar, é necessário configurar a sincronização automática ao iniciar uma nova sessão com o usuário. Para isso, rode no terminal:
+
+```
+$ sudo mkdir ~/.config/autostart/ && sudo leafpad ~/.config/autostart/OneDrive-autostart-sync.desktop
+```
+
+Na tela do leafpad, escreva o seguinte conteúdo (é recomendada a [instalação dos ícones Papirus](#ícones)):
+
+```
+[Desktop Entry]
+
+Type=Application
+Exec=onedrive --sync
+Name=OneDrive Autostart Sync
+Comment=Execute a command to run an OneDrive synchronization at autostart session
+Icon=/usr/share/icons/Papirus/Papirus/128x128/apps/ms-onedrive.svg
 ```
 
 ## Configurando o [JGMenu](https://github.com/jgmenu/jgmenu)
