@@ -20,11 +20,14 @@
 
 * [Softwares](#softwares);
 * [Instalar Temas e Alterar Aparência](#instalar-temas-e-alterar-aparência);
-* [Configuarar o OneDrive](#configurar-o-one-drive);
+* [Configurar o OneDrive](#configurar-o-one-drive);
 * [Configurando o JGMenu](#configurando-o-jgmenu);
 * [WebApps e Sofwares Extras](#webapps-e-sofwares-extras);
 * [Softwares de Inicialização](#softwares-de-inicialização);
 * [Desligar/Reiniciar via Terminal](#desligarreiniciar-via-terminal).
+
+-------------------
+  
 ## Softwares
 
 Vamos rodar no terminal um código para limpar os aplicativos que não serão usados, pois serão substituidos por outros de nossa preferência:
