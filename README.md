@@ -5,7 +5,7 @@
 
 # Guia de Personalização
 
-Guia para configuração e personalização pessoal após uma nova instalação do [Fedora LXDE](https://fedorabr.org/categories/lxde).
+Guia para configuração e personalização pessoal após uma nova instalação do [Fedora LXDE](https://fedoraproject.org/spins/lxde).
 
 ## [Sumário](#sumário)
 
