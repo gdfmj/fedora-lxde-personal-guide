@@ -14,9 +14,9 @@
 
 -------------------
 
-# Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedorabr.org/categories/lxde)
+# Guia #1: O QUE FAZER APÓS INSTALAR O [FEDORA LXDE](https://fedoraproject.org/spins/lxde)
 
-Sumário:
+Índice:
 
 * [Softwares](#softwares);
 * [Instalar Temas e Alterar Aparência](#instalar-temas-e-alterar-aparência);
